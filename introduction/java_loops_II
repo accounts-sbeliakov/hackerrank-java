@@ -1,14 +1,13 @@
-import java.util.*;
-import java.io.*;
+import java.util.Scanner;
 import java.lang.Math;
 
 class Solution {
 
-  statis private final int EXPONENT = 2;
+  static private final int EXPONENT = 2;
   
-  public statis void loops(int firstNumber, int secondNumber, int power, int temporaryResult) {
-    temporaryResult += a;
-    for(int j = 0; j < n; j++) {
+  public static void loops(int firstNumber, int secondNumber, int power, int temporaryResult) {
+    temporaryResult += firstNumber;
+    for(int j = 0; j < power; j++) {
       temporaryResult += secondNumber * Math.pow(EXPONENT, j);
       System.out.printf(temporaryResult + " ");
     }  
