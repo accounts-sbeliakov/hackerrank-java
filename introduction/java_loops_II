@@ -2,24 +2,30 @@ import java.util.*;
 import java.io.*;
 import java.lang.Math;
 
-class Solution{
-  public static void main(String []argh) {
-    Scanner in = new Scanner(System.in);
-      int t = in.nextInt();
+class Solution {
+
+  statis private final int EXPONENT = 2;
+  
+  public statis void loops(int firstNumber, int secondNumber, int power, int temporaryResult) {
+    temporaryResult += a;
+    for(int j = 0; j < n; j++) {
+      temporaryResult += secondNumber * Math.pow(EXPONENT, j);
+      System.out.printf(temporaryResult + " ");
+    }  
+    System.out.printf("\n");
+  }
+  
+  public static void main(String []args) {
+    Scanner input = new Scanner(System.in);
+      int numberOfLines = input.nextInt();
       int result = 0;
-      int exponent = 2;
-        for(int i = 0;i < t;i++){
-          int a = in.nextInt();
-          int b = in.nextInt();
-          int n = in.nextInt();
-          result += a;
-          for(int j = 0; j < n; j++){
-            result += b * Math.pow(exponent, j);
-            System.out.printf(result + " ");
-          }  
-          System.out.printf("\n");
+        for(int lineNumber = 0; lineNumber < numberOfLines; lineNumber++) {
+          int firstValue = input.nextInt();
+          int secondValue = input.nextInt();
+          int exponentValue = input.nextInt();
+          loops(firstValue, secondValue, exponentValue, result);
           result = 0;
         }
-        in.close();
+        input.close();
   }
 }
