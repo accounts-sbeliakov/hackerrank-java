@@ -1,30 +1,34 @@
-import java.util.Scanner;
 import java.lang.Math;
+import java.util.Scanner;
+import java.lang.Object;
 
 class Solution {
-
   static private final int EXPONENT = 2;
-  
-  public static void loops(int firstNumber, int secondNumber, int power, int temporaryResult) {
-    temporaryResult += firstNumber;
-    for(int j = 0; j < power; j++) {
-      temporaryResult += secondNumber * Math.pow(EXPONENT, j);
-      System.out.printf(temporaryResult + " ");
+  private static String loops(int firstNumber, int secondNumber, int power) {
+    int exponentStep = 1;
+    String outputString = new String("");
+    int outputValue = firstNumber;
+    for (int j = 0; j < power; j++) { 
+      int secondCombo = secondNumber * exponentStep;
+      outputValue += secondCombo;
+      outputString = outputString + outputValue;
+      outputString = outputString + " ";
+      exponentStep = exponentStep * EXPONENT;
     }  
-    System.out.printf("\n");
+    return outputString;
   }
   
   public static void main(String []args) {
     Scanner input = new Scanner(System.in);
-      int numberOfLines = input.nextInt();
-      int result = 0;
-        for(int lineNumber = 0; lineNumber < numberOfLines; lineNumber++) {
-          int firstValue = input.nextInt();
-          int secondValue = input.nextInt();
-          int exponentValue = input.nextInt();
-          loops(firstValue, secondValue, exponentValue, result);
-          result = 0;
-        }
-        input.close();
+    int numberOfLines = input.nextInt();
+    String output = new String("");
+      for (int lineNumber = 0; lineNumber < numberOfLines; lineNumber++) {
+        int firstValue = input.nextInt();
+        int secondValue = input.nextInt();
+        int exponentValue = input.nextInt();
+        output = loops(firstValue, secondValue, exponentValue);
+        System.out.println(output);
+      }
+  input.close();
   }
 }
