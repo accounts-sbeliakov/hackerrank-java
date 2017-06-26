@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 public class Solution {
-  static private final int MAX_NUMBER_OPERATIONS = 10;
+  private static final int NUMBER_OF_ITERATIONS = 10;
   public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
-    int inputNumber = input.nextInt();
-    int result;
-    for (int i = 1; i <= MAX_NUMBER_OPERATIONS; i++) {
-      result = inputNumber * i;
-      System.out.printf("%d x %d = %d\n", inputNumber, i, result);
+    Scanner scan = new Scanner(System.in);
+    int inputNumber = scan.nextInt();
+    for (int iterationNumber = 1; iterationNumber <= NUMBER_OF_ITERATIONS; iterationNumber++) {
+      int resultOfMultiplication;
+      resultOfMultiplication = inputNumber * iterationNumber;
+      System.out.printf("%d x %d = %d\n", inputNumber, iterationNumber, resultOfMultiplication);
     } 
   }
 }
