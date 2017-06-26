@@ -1,34 +1,33 @@
 import java.lang.Math;
-import java.util.Scanner;
 import java.lang.Object;
+import java.util.Scanner;
+import java.lang.StringBuilder;
 
 class Solution {
-  static private final int EXPONENT = 2;
-  private static String loops(int firstNumber, int secondNumber, int power) {
-    int exponentStep = 1;
-    String outputString = new String("");
-    int outputValue = firstNumber;
-    for (int j = 0; j < power; j++) { 
-      int secondCombo = secondNumber * exponentStep;
-      outputValue += secondCombo;
-      outputString = outputString + outputValue;
-      outputString = outputString + " ";
-      exponentStep = exponentStep * EXPONENT;
-    }  
-    return outputString;
+  private static final int B_MULTIPLIER_BASE = 2;
+  private static String generateSeries(int coefficientA, int coefficientB, int seriesLength) {
+    int bMultiplier = 1;
+    int seriesTerm = coefficientA;
+    StringBuilder resultBuilder = new StringBuilder();
+    for (int i = 0; i < seriesLength; i++) {
+      seriesTerm += coefficientB * bMultiplier;
+      resultBuilder.append(seriesTerm + " ");
+      bMultiplier = bMultiplier * B_MULTIPLIER_BASE;
+    }
+    return resultBuilder.toString();
   }
   
   public static void main(String []args) {
     Scanner input = new Scanner(System.in);
     int numberOfLines = input.nextInt();
-    String output = new String("");
-      for (int lineNumber = 0; lineNumber < numberOfLines; lineNumber++) {
-        int firstValue = input.nextInt();
-        int secondValue = input.nextInt();
-        int exponentValue = input.nextInt();
-        output = loops(firstValue, secondValue, exponentValue);
-        System.out.println(output);
-      }
+    String output = new String();
+    for (int lineNumber = 0; lineNumber < numberOfLines; lineNumber++) {
+      int firstValue = input.nextInt();
+      int secondValue = input.nextInt();
+      int exponentValue = input.nextInt();
+      output = generateSeries(firstValue, secondValue, exponentValue);
+      System.out.println(output);
+    }
   input.close();
   }
 }
