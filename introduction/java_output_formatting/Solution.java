@@ -7,8 +7,8 @@ public class Solution {
   static private final int MAX_TWO_DIGITS_NUMBER = 99;
   static private final String ONE_DIGIT_NUMBER_PREFIX = "00";
   static private final String TWO_DIGITS_NUMBER_PREFIX = "0";
-  static private final int STRINGQUANTITY = 3; 
-  static private final int VERTICALSEPARATORLENGTH = 32;
+  static private final int NUMBER_OF_INPUTS = 3; 
+  static private final int VERTICAL_SEPARATOR_LENGTH = 32;
   
   public static String formatOutput(String line, String numberPrefix, int number) {
     StringBuilder result = new StringBuilder(line);
@@ -22,21 +22,24 @@ public class Solution {
     return resultToString;
   }
 
+  public static String resultOutput(String inputStringValue, int inputNumberValue) {
+    if (inputNumberValue <= MAX_ONE_DIGIT_NUMBER) {
+        return formatOutput(inputStringValue, ONE_DIGIT_NUMBER_PREFIX, inputNumberValue);
+      } else if (inputNumberValue <= MAX_TWO_DIGITS_NUMBER) {
+        return formatOutput(inputStringValue, TWO_DIGITS_NUMBER_PREFIX, inputNumberValue);
+      } else {
+        return formatOutput(inputStringValue, "", inputNumberValue);
+      }
+  }
+    
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
-    String verticalSeparator = new String(new char[VERTICALSEPARATORLENGTH]).replace('\0', '=');
+    String verticalSeparator = new String(new char[VERTICAL_SEPARATOR_LENGTH]).replace('\0', '=');
     System.out.println(verticalSeparator);
-    for (int i = 0; i < STRINGQUANTITY; i++) {
+    for (int i = 0; i < NUMBER_OF_INPUTS; i++) {
       String inputString = scan.next();
       int inputNumber = scan.nextInt();
-      if (inputNumber <= MAX_ONE_DIGIT_NUMBER) {
-        System.out.printf(formatOutput(inputString, ONE_DIGIT_NUMBER_PREFIX, inputNumber));
-      } else if (inputNumber <= MAX_TWO_DIGITS_NUMBER) {
-        System.out.printf(formatOutput(inputString, TWO_DIGITS_NUMBER_PREFIX, inputNumber));
-      }
-      else {
-        System.out.printf(formatOutput(inputString, "", inputNumber));
-      }
+      System.out.printf(resultOutput(inputString, inputNumber));
     }
     System.out.println(verticalSeparator);
   }
