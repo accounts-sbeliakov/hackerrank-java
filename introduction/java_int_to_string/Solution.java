@@ -1,5 +1,7 @@
+import java.security.Permission;
 import java.util.Scanner;
-import java.security.*; //dont know what exactly is used, cant check properly
+import java.security.SecurityException;
+import java.security.SecurityManager;
 
 public class Solution {
   public static void main(String[] args) {
@@ -8,7 +10,7 @@ public class Solution {
       Scanner input = new Scanner(System.in);
       int inputNumber = input.nextInt();
       input.close();
-      String stringFromNumber = new String(Integer.toString(inputNumber));
+      String stringFromNumber = Integer.toString(inputNumber);
       if (inputNumber == Integer.parseInt(stringFromNumber)) {
         System.out.println("Good job");
       } else {
@@ -20,7 +22,7 @@ public class Solution {
   }
 }
 
-class DoNotTerminate {
+public class DoNotTerminate {
   public static class ExitTrappedException extends SecurityException {
     private static final long serialVersionUID = 1;
   }
