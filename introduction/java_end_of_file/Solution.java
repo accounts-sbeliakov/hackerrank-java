@@ -3,13 +3,11 @@ import java.util.Scanner;
 public class Solution {
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    int stringNumber = 1;
-    while (input.hasNext()) {
-      String nextLine = new String("");
-      nextLine = nextLine + stringNumber + " ";
+    for (int lineNumber = 1; input.hasNext(); lineNumber++) {
+      String nextLine = "";
+      nextLine = nextLine + lineNumber + " ";
       nextLine = nextLine + input.nextLine();
       System.out.println(nextLine);
-      stringNumber++;
     }
   }
 }
