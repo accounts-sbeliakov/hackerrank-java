@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class Solution {
   public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
-    int inInt = input.nextInt();
-    double inDouble = input.nextDouble();
-    input.nextLine();
-    String inString = input.nextLine();
-    System.out.println("String: " + inString);
-    System.out.println("Double: " + inDouble);
-    System.out.println("Int: " + inInt);
+    Scanner scan = new Scanner(System.in);
+    int inputInteger = scan.nextInt();
+    double inputDouble = scan.nextDouble();
+    scan.nextLine();
+    String inputString = scan.nextLine();
+    System.out.println("String: " + inputString);
+    System.out.println("Double: " + inputDouble);
+    System.out.println("Int: " + inputInteger);
   }
 }
