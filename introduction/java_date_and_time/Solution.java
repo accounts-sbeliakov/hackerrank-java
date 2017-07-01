@@ -27,7 +27,6 @@ public class Solution {
   private static int getDayOfWeek(int year, int month, int day) {
     Calendar calendar = Calendar.getInstance();
     calendar.set(year, month, day);
-    calendar.setFirstDayOfWeek(Calendar.MONDAY);
     return calendar.get(Calendar.DAY_OF_WEEK);
   }
   
