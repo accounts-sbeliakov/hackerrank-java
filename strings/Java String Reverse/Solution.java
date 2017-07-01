@@ -4,18 +4,18 @@ import java.util.Scanner;
 
 public class Solution {
   
-  private static String checkIfPolindrom(String inputString) {
-    StringBuilder reversedString = new StringBuilder(inputString);
-    if (inputString.equals(reversedString.reverse().toString()) == true) {
-      return "Yes";
-    } else {
-      return "No";
-    }
+  private static boolean isPolindrom(String input) {
+    String reversed = new StringBuilder(input).reverse().toString();
+    return input.equals(reversed);
   }
   
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     String stringToCheck = sc.next();
-    System.out.println(checkIfPolindrom(stringToCheck));
+    if (isPolindrom(stringToCheck)) {
+      System.out.println("Yes");
+    } else {
+      System.out.println("No");
+    } 
   }
 }
