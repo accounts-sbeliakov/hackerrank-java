@@ -1,10 +1,11 @@
 import java.lang.Math;
 import java.lang.Object;
-import java.util.Scanner;
 import java.lang.StringBuilder;
+import java.util.Scanner;
 
 class Solution {
   private static final int B_MULTIPLIER_BASE = 2;
+  
   private static String generateSeries(int coefficientA, int coefficientB, int seriesLength) {
     int bMultiplier = 1;
     int seriesTerm = coefficientA;
@@ -17,15 +18,14 @@ class Solution {
     return resultBuilder.toString();
   }
   
-  public static void main(String []args) {
+  public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     int numberOfLines = input.nextInt();
-    String output = new String();
     for (int lineNumber = 0; lineNumber < numberOfLines; lineNumber++) {
       int firstValue = input.nextInt();
       int secondValue = input.nextInt();
       int exponentValue = input.nextInt();
-      output = generateSeries(firstValue, secondValue, exponentValue);
+      String output = generateSeries(firstValue, secondValue, exponentValue);
       System.out.println(output);
     }
   input.close();
