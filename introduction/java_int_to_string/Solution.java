@@ -1,7 +1,7 @@
 import java.security.Permission;
-import java.util.Scanner;
 import java.security.SecurityException;
 import java.security.SecurityManager;
+import java.util.Scanner;
 
 public class Solution {
   public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class Solution {
       input.close();
       String stringFromNumber = Integer.toString(inputNumber);
       if (inputNumber == Integer.parseInt(stringFromNumber)) {
-        System.out.println("Good job");
+        System.out.println("Good job.");
       } else {
         System.out.println("Wrong answer.");
       }
