@@ -1,12 +1,12 @@
-import java.util.Scanner;
 import java.lang.String;
+import java.util.Scanner;
 
 public class Solution {
   
-  private static String getSmallestSubstring(String inputWord, int length) {
-    String smallest = inputWord.substring(0, length);
-    for (int i = 0; i <= inputWord.length() - length; i++) {
-      String substring = inputWord.substring(i, i + length);
+  private static String getSmallestSubstring(String inputLine, int length) {
+    String smallest = inputLine.substring(0, length);
+    for (int i = 0; i <= inputLine.length() - length; i++) {
+      String substring = inputLine.substring(i, i + length);
       if (substring.compareTo(smallest) < 0) {
         smallest = substring;
       } 
@@ -27,10 +27,10 @@ public class Solution {
 
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
-    String word = scan.next();
+    String line = scan.next();
     int susbtringLength = scan.nextInt();
     scan.close();
-    System.out.println(getSmallestSubstring(word, susbtringLength));
-     System.out.println(getLargestSubstring(word, susbtringLength));
+    System.out.println(getSmallestSubstring(line, susbtringLength));
+    System.out.println(getLargestSubstring(line, susbtringLength));
   }
 }
