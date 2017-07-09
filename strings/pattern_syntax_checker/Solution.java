@@ -17,8 +17,9 @@ public class Solution {
   
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
-    int numberOfTests = Integer.parseInt(in.nextLine());
-    while (numberOfTests > 0) {
+    int numberOfTests = in.nextInt();
+    in.nextLine();
+    for (int i = 0; i < numberOfTests; i++) {
       String pattern = in.nextLine();
       System.out.println(isValidRegex(pattern) ? VALID : INVALID);
     }
