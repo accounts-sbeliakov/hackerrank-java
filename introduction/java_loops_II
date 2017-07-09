@@ -24,10 +24,10 @@ class Solution {
     for (int lineNumber = 0; lineNumber < numberOfLines; lineNumber++) {
       int firstValue = input.nextInt();
       int secondValue = input.nextInt();
-      int exponentValue = input.nextInt();
-      String output = generateSeries(firstValue, secondValue, exponentValue);
+      int power = input.nextInt();
+      String output = generateSeries(firstValue, secondValue, power);
       System.out.println(output);
     }
-  input.close();
+    input.close();
   }
 }
