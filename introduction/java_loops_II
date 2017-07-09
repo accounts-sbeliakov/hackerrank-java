@@ -1,0 +1,33 @@
+import java.lang.Math;
+import java.lang.Object;
+import java.lang.StringBuilder;
+import java.util.Scanner;
+
+class Solution {
+  private static final int B_MULTIPLIER_BASE = 2;
+  
+  private static String generateSeries(int coefficientA, int coefficientB, int seriesLength) {
+    int bMultiplier = 1;
+    int seriesTerm = coefficientA;
+    StringBuilder resultBuilder = new StringBuilder();
+    for (int i = 0; i < seriesLength; i++) {
+      seriesTerm += coefficientB * bMultiplier;
+      resultBuilder.append(seriesTerm + " ");
+      bMultiplier = bMultiplier * B_MULTIPLIER_BASE;
+    }
+    return resultBuilder.toString();
+  }
+  
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    int numberOfLines = input.nextInt();
+    for (int lineNumber = 0; lineNumber < numberOfLines; lineNumber++) {
+      int firstValue = input.nextInt();
+      int secondValue = input.nextInt();
+      int power = input.nextInt();
+      String output = generateSeries(firstValue, secondValue, power);
+      System.out.println(output);
+    }
+    input.close();
+  }
+}
