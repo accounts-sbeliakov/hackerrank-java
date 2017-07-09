@@ -9,7 +9,7 @@ public class Solution {
     Scanner input = new Scanner(System.in); 
     breadth = input.nextInt();
     height = input.nextInt();
-    if ((breadth <= 0) || (height <= 0)) {
+    if (breadth <= 0 || height <= 0) {
       System.out.println("java.lang.Exception: Breadth and height must be positive");
       flag = false;
     }
