@@ -17,7 +17,6 @@ public class Solution {
     String first = scan.next();
     String second = scan.next();
     scan.close();
-    boolean output = isAnagram(first, second);
-    System.out.println( (output) ? "Anagrams" : "Not Anagrams" );
+    String output = isAnagram(first, second) ? "Anagrams" : "Not Anagrams";
   }
 }
